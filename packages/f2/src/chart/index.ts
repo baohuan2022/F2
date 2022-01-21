@@ -314,6 +314,12 @@ class Chart extends Component implements IChart, InteractionMixin {
 
   filter(field: string, condition) {
     const { filters } = this.state;
+    console.log('chart filter', {
+      filters: {
+        ...filters,
+        [field]: condition,
+      },
+    });
     this.setState({
       filters: {
         ...filters,

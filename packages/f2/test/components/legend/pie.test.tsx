@@ -2,7 +2,7 @@ import { jsx } from '../../../src';
 import { Polar } from '../../../src/coord';
 import { Canvas, Chart } from '../../../src';
 import { Interval, Legend } from '../../../src/components';
-import { createContext } from '../../util';
+import { createContext, delay } from '../../util';
 
 const data = [
   {
@@ -38,7 +38,7 @@ const data = [
 ];
 
 describe('图例 - position', () => {
-  it('饼图图例 - top', () => {
+  it('饼图图例 - top', async () => {
     const context = createContext('饼图图例 - top');
     const chartRef = { current: null };
     const { type, props } = (
@@ -60,9 +60,12 @@ describe('图例 - position', () => {
 
     const canvas = new Canvas(props);
     canvas.render();
+
+    await delay(500);
+    expect(context).toMatchImageSnapshot();
   });
 
-  it('饼图图例 - bottom', () => {
+  it('饼图图例 - bottom', async () => {
     const context = createContext('饼图图例 - bottom');
     const chartRef = { current: null };
     const { type, props } = (
@@ -83,9 +86,12 @@ describe('图例 - position', () => {
 
     const canvas = new Canvas(props);
     canvas.render();
+
+    await delay(500);
+    expect(context).toMatchImageSnapshot();
   });
 
-  it('饼图图例 - left', () => {
+  it('饼图图例 - left', async () => {
     const context = createContext('饼图图例 - left');
     const chartRef = { current: null };
     const { type, props } = (
@@ -106,9 +112,12 @@ describe('图例 - position', () => {
 
     const canvas = new Canvas(props);
     canvas.render();
+
+    await delay(500);
+    expect(context).toMatchImageSnapshot();
   });
 
-  it('饼图图例 - right', () => {
+  it.only('饼图图例 - right', async () => {
     const context = createContext('饼图图例 - right');
     const chartRef = { current: null };
     const { type, props } = (
@@ -129,5 +138,8 @@ describe('图例 - position', () => {
 
     const canvas = new Canvas(props);
     canvas.render();
+
+    await delay(500);
+    expect(context).toMatchImageSnapshot();
   });
 });
