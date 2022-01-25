@@ -1,19 +1,19 @@
 import F2 from '@antv/f2';
 
 const data = [{
-  year: '2012',
+  year: '2019',
   sales: 850
 }, {
-  year: '2013',
+  year: '2020',
   sales: 894
 }, {
-  year: '2014',
+  year: '2021',
   sales: 912
 }, {
-  year: '2015',
+  year: '2022',
   sales: 974
 }, {
-  year: '2016',
+  year: '2023',
   sales: 997
 }, {
   year: '2017',
